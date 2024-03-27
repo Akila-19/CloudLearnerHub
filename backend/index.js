@@ -5,12 +5,19 @@ import cors from 'cors';
 const app = express();
 app.use(cors())
 app.use(express.json())
+// added by akila for testing purpose
 const db = mysql.createConnection({
-     host : "database-cloudlearnerhub.cf0qgqyekksk.us-east-1.rds.amazonaws.com",
+     host : "cloudhubtest1.cnamgcka6sb7.us-east-1.rds.amazonaws.com",
      user:"admin",
-     password:"group2lab",
+     password:"akilavasan",
      database:"database_cloudhub"
  })
+// const db = mysql.createConnection({
+//      host : "database-cloudlearnerhub.cf0qgqyekksk.us-east-1.rds.amazonaws.com",
+//      user:"admin",
+//      password:"group2lab",
+//      database:"database_cloudhub"
+//  })
 //const db = mysql.createConnection({
 //    host : "localhost", 
 //    user:"akila_admin",
