@@ -8,7 +8,7 @@ function CourseList() {
   const { setSelectedCourse } = useCourseContext();
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get('http://localhost:8080/courses')
+    axios.get('http://ec2-44-204-18-44.compute-1.amazonaws.com:8080/courses')
       .then(response => setData(response.data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
