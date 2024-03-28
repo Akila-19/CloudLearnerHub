@@ -27,7 +27,7 @@ function Payment() {
         const { courseName, price, userName, email, cardNumber, expiry, cvv } = formData;
         const paymentData = { courseName, price, userName, email, cardNumber, expiry, cvv };
 
-        const response = await axios.post('http://localhost:8080/payment', paymentData);
+        const response = await axios.post('http://ec2-44-204-18-44.compute-1.amazonaws.com:8080/payment', paymentData);
         console.log('Form submitted successfully:', response.data);
         alert("Your payment is done successful!")
         setPaymentSuccess(true);
