@@ -3,7 +3,11 @@ import mysql from "mysql"
 import cors from 'cors';
 
 const app = express();
-app.use(cors())
+app.use(cors(
+     {
+          origin: 'http://ec2-44-204-18-44.compute-1.amazonaws.com:3000'
+     }
+))
 app.use(express.json())
 // added by akila for testing purpose
 const db = mysql.createConnection({
@@ -25,7 +29,7 @@ const db = mysql.createConnection({
 //    database:"cloudlearnerhub"
 //})
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); 
+    res.header('Access-Control-Allow-Origin', 'http://ec2-44-204-18-44.compute-1.amazonaws.com:3000'); 
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
